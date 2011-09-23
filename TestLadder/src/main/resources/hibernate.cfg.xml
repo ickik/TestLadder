@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"	"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<property name="connection.release_mode">auto</property>
+		<property name="c3p0.acquire_increment">5</property> 
+		<property name="c3p0.min_size">5</property> 
+		<property name="c3p0.max_size">100</property> 
+		<property name="c3p0.max_statements">500</property>
+		<property name="c3p0.timeout">3600</property>
+		<property name="c3p0.idle_test_period">14400</property>
+		<property name="c3p0.debugUnreturnedConnectionStackTraces">true</property>
+		<property name="c3p0.unreturnedConnectionTimeout">300</property>
+		<property name="c3p0.preferredTestQuery">schemacrm.fonction</property>
+		<property name="show_sql">false</property>
+		<property name="hibernate.query.substitutions">true 1, false 0</property>
+		
+		<mapping resource="com/ickik/ladder/persistence/Version.hbm.xml"/>
+		<mapping resource="com/ickik/ladder/persistence/Category.hbm.xml"/>
+		<mapping resource="com/ickik/ladder/persistence/XMLFile.hbm.xml"/>
+		<mapping resource="com/ickik/ladder/persistence/TestClass.hbm.xml"/>
+		<mapping resource="com/ickik/ladder/persistence/Campaign.hbm.xml"/>
+		<mapping resource="com/ickik/ladder/persistence/State.hbm.xml"/>
+		<mapping resource="com/ickik/ladder/persistence/Result.hbm.xml"/>
+		<mapping resource="com/ickik/ladder/persistence/TestType.hbm.xml"/>
+		<mapping resource="com/ickik/ladder/persistence/Criticality.hbm.xml"/>
+		<mapping resource="com/ickik/ladder/persistence/User.hbm.xml"/>
+		<mapping resource="com/ickik/ladder/persistence/TestCase.hbm.xml"/>
+		<mapping resource="com/ickik/ladder/persistence/Test.hbm.xml"/>
+	</session-factory>
+</hibernate-configuration>

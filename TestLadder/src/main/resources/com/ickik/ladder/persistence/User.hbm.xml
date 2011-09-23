@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping package="com.ickik.ladder.values">
+	<class name="com.ickik.ladder.values.User" table="USERS" lazy="false">
+		<id name="id" type="long" column="ID">
+			<generator class="identity">
+			</generator>
+			<!-- <generator class="increment" /> -->
+		</id>
+		<property name="login" column="LOGIN"/>
+		<property name="password" column="PASSWORD"/>
+		<property name="rights" column="RIGHTS"/>
+	</class>
+</hibernate-mapping>

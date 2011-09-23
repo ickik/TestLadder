@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping package="com.ickik.ladder.values">
+	<class name="com.ickik.ladder.values.Test" table="TEST_RESULTS" lazy="false">
+		<id name="id" type="long" column="ID">
+			<generator class="identity"/>
+		</id>
+		<many-to-one name="testCase" column="ID_TESTCASE" class="TestCase" not-found="exception"/>
+		<many-to-one name="result" column="ID_RESULT" class="Result" not-found="ignore"/>
+		<property name="dateCreation" column="DATE_CREATION"/>
+		<many-to-one name="userCreator" column="ID_USER_CREATOR" class="User" not-found="ignore"/>
+		<many-to-one name="testType" column="ID_TEST_TYPE" class="TestType" not-found="ignore"/>
+		<many-to-one name="campaign" column="ID_CAMPAIGN" class="Campaign" not-found="exception"/>
+		<many-to-one name="userExecutor" column="ID_USER_EXECUTOR" class="User" not-found="ignore"/>
+		<property name="executionDate" column="DATE_EXECUTION"/>
+	</class>
+</hibernate-mapping>

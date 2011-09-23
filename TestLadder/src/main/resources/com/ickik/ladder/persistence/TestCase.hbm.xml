@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping package="com.ickik.ladder.values">
+	<class name="TestCase" table="TEST_PLAN" >
+		<id name="id" type="long" column="ID">
+			<generator class="identity"/>
+		</id>
+		<many-to-one name="category" column="ID_CATEGORY" class="Category" not-found="ignore"/>
+		<many-to-one name="xmlFile" column="ID_XMLFILE" class="XMLFile" not-found="ignore"/>
+		<many-to-one name="testClass" column="ID_TESTCLASS" class="TestClass" not-found="ignore"/>
+		<property name="method" column="TEST_METHOD"/>
+		<property name="description" column="DESCRIPTION"/>
+		<property name="action" column="ACTION"/>
+		<many-to-one name="state" column="ID_STATE" class="State" not-found="ignore"/>
+		<many-to-one name="version" column="ID_VERSION" class="Version" not-found="ignore"/>
+		<many-to-one name="lastModifiedVersion" column="ID_LAST_MODIFIED_VERSION" class="Version" not-found="ignore"/>
+		<many-to-one name="criticality" column="ID_CRITICALITY" class="Criticality" not-found="ignore" />
+		<many-to-one name="userCreator" column="ID_USER_CREATOR" class="User" not-found="ignore"/>
+		<property name="dateCreation" column="DATE_CREATION"/>
+		<many-to-one name="userModifier" column="ID_USER_MODIFIER" class="User" not-found="ignore"/>
+		<property name="dateModification" column="DATE_MODIFICATION"/>
+	</class>
+</hibernate-mapping>
